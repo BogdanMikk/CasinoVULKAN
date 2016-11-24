@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace VULCAN_TOP_CASINO
 {
-    public partial class MainForm : Form
+    public partial class LoginForm : Form
     {
-        public MainForm()
+        public LoginForm()
         {
             InitializeComponent();
-        }
-
-        private void btLogin_Click(object sender, EventArgs e)
-        {
-            LoginForm fl = new LoginForm();
-            fl.Show();
         }
     }
 }
