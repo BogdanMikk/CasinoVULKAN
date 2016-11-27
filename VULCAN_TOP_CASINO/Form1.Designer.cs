@@ -38,7 +38,7 @@
             this.LbCasinoName.AutoSize = true;
             this.LbCasinoName.Font = new System.Drawing.Font("Blackadder ITC", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbCasinoName.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.LbCasinoName.Location = new System.Drawing.Point(181, 9);
+            this.LbCasinoName.Location = new System.Drawing.Point(12, 9);
             this.LbCasinoName.Name = "LbCasinoName";
             this.LbCasinoName.Size = new System.Drawing.Size(447, 82);
             this.LbCasinoName.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // btLogin
             // 
-            this.btLogin.Location = new System.Drawing.Point(278, 94);
+            this.btLogin.Location = new System.Drawing.Point(109, 94);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(125, 35);
             this.btLogin.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btRegister
             // 
-            this.btRegister.Location = new System.Drawing.Point(409, 94);
+            this.btRegister.Location = new System.Drawing.Point(240, 94);
             this.btRegister.Name = "btRegister";
             this.btRegister.Size = new System.Drawing.Size(125, 35);
             this.btRegister.TabIndex = 1;
@@ -68,12 +68,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 512);
+            this.ClientSize = new System.Drawing.Size(471, 153);
             this.Controls.Add(this.btRegister);
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.LbCasinoName);
-            this.MaximumSize = new System.Drawing.Size(850, 550);
-            this.MinimumSize = new System.Drawing.Size(850, 550);
+            this.MaximumSize = new System.Drawing.Size(487, 191);
+            this.MinimumSize = new System.Drawing.Size(487, 191);
             this.Name = "MainForm";
             this.Text = "Casino";
             this.ResumeLayout(false);

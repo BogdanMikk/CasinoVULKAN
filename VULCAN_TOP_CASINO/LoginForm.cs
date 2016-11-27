@@ -45,6 +45,7 @@ namespace VULCAN_TOP_CASINO
             {
                 MessageBox.Show("login failed");
             }
+            this.Close();
         }
     }
 }
