@@ -62,6 +62,7 @@
             this.btRegister.TabIndex = 1;
             this.btRegister.Text = "Register";
             this.btRegister.UseVisualStyleBackColor = true;
+            this.btRegister.Click += new System.EventHandler(this.btRegister_Click);
             // 
             // MainForm
             // 

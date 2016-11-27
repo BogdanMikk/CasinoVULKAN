@@ -22,5 +22,11 @@ namespace VULCAN_TOP_CASINO
             LoginForm fl = new LoginForm();
             fl.Show();
         }
+
+        private void btRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm f2 = new RegisterForm();
+            f2.Show();
+        }
     }
 }
