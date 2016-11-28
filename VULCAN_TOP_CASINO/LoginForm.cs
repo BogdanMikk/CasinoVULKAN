@@ -16,6 +16,7 @@ namespace VULCAN_TOP_CASINO
         public LoginForm()
         {
             InitializeComponent();
+            Class1.Login = false;
         }
 
         private void buttoncan_Click(object sender, EventArgs e)
@@ -25,27 +26,47 @@ namespace VULCAN_TOP_CASINO
 
         private void buttonlog_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Projects\VULCAN_TOP_CASINO\VULCAN_TOP_CASINO\Database1.mdf;Integrated Security=True;");
-            con.Open();
-            String str1 = "select name, email, pass from users where email='" + textBox1.Text + "' and pass='" + textBox2.Text + "'";
-            SqlCommand cmd = new SqlCommand(str1, con);
-            SqlDataAdapter da = new SqlDataAdapter(str1, con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Projects\VULCAN_TOP_CASINO\VULCAN_TOP_CASINO\Database1.mdf;Integrated Security=True;"))
             {
-                SqlDataReader dr;
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
+                try
                 {
-                    MessageBox.Show("hi " + dr["name"].ToString() + " thank you for using this app");
+                    con.Open();
+                    String str1 = "select * from users where email='" + textBox1.Text + "' and pass='" + textBox2.Text + "'";
+                    SqlCommand cmd = new SqlCommand(str1, con);
+                    SqlDataAdapter da = new SqlDataAdapter(str1, con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    SqlDataReader dr;
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        MessageBox.Show("hi " + dr["name"].ToString() + " thank you for using this app");
+                    
+                        // new form 
+                        Class1.Login = true;
+                        Class1.Name = dr["name"].ToString();
+                        Class1.Email = dr["email"].ToString();
+                        Class1.Money = Convert.ToDouble(dr["money"]);
+
+                        FormM frM = new FormM();
+                        frM.Show();
+                        // new form
+                    }
                 }
+                else
+                {
+                    Class1.Login = false;
+                    MessageBox.Show("login failed");
+                }
+                }
+                catch
+                {
+                    con.Close();
+                }
+                this.Close();
             }
-            else
-            {
-                MessageBox.Show("login failed");
-            }
-            this.Close();
         }
     }
 }

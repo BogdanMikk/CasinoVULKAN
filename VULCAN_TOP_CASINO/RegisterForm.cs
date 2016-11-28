@@ -24,25 +24,33 @@ namespace VULCAN_TOP_CASINO
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "")
+            try
             {
-                if (textBox3.Text == textBox4.Text)
+                if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "")
                 {
-                    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Projects\VULCAN_TOP_CASINO\VULCAN_TOP_CASINO\Database1.mdf;Integrated Security=True;");
-                    String str = "insert into users (name,email,pass,cpass) values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "')";
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(str, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("you are registred, thank you!");
+                    if (textBox3.Text == textBox4.Text)
+                    {
+                        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Projects\VULCAN_TOP_CASINO\VULCAN_TOP_CASINO\Database1.mdf;Integrated Security=True;");
+                        String str = "insert into users (name,email,pass) values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "')";
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand(str, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("you are registred, thank you!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        label5.Show();
+                    }
                 }
                 else
                 {
-                    label5.Show();
+                    MessageBox.Show("You do not fill data!");
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("You do not fill data!");
+                MessageBox.Show("Failed");
             }
         }
 

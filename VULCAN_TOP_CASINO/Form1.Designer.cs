@@ -1,6 +1,6 @@
 ﻿namespace VULCAN_TOP_CASINO
 {
-    partial class MainForm
+    partial class MForm
     {
         /// <summary>
         /// Требуется переменная конструктора.
