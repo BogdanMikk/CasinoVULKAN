@@ -46,6 +46,7 @@ namespace VULCAN_TOP_CASINO
                     
                         // new form 
                         Class1.Login = true;
+                        Class1.Id = Convert.ToInt32(dr["id"]);
                         Class1.Name = dr["name"].ToString();
                         Class1.Email = dr["email"].ToString();
                         Class1.Money = Convert.ToDouble(dr["money"]);

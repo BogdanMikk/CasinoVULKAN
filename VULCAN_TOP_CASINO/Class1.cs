@@ -12,5 +12,6 @@ namespace VULCAN_TOP_CASINO
         public static string Name { get; set; }
         public static double Money { get; set; }
         public static string Email { get; set; }
+        public static int Id { get; set; }
     }
 }

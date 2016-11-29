@@ -19,7 +19,6 @@ namespace VULCAN_TOP_CASINO
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
             LoginForm fl = new LoginForm();
             fl.ShowDialog();
         }
