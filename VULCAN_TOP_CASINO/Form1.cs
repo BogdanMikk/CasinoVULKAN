@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace VULCAN_TOP_CASINO
 {
-    public partial class MForm : Form
+    public partial class MForm : Form//////
     {
         public MForm()
         {
